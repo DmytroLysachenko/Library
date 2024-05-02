@@ -1,0 +1,56 @@
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  background-color: black;
+}
+
+.backdrop-opened {
+  overflow: hidden;
+}
+
+.backdrop-is-open {
+  opacity: 0.6;
+  visibility: visible;
+  z-index: 1000;
+}
+
+.work-together-modal-window {
+  width: 343px;
+  border: 1px solid rgba(250, 250, 250, 0.1);
+  border-radius: 20px;
+  padding: 64px 32px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -50%);
+  background-color: var(--background);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-pattern),
+    visibility var(--transition-pattern), transform var(--transition-pattern);
+}
+@media screen and (min-width: 768px) {
+  .work-together-modal-window {
+    width: 492px;
+    padding: 63px;
+    transform: translate(-200%, -50%);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .work-together-modal-window {
+    transform: translate(-300%, -50%);
+  }
+}
+.window-is-open {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+  z-index: 1000;
+}
